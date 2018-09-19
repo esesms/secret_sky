@@ -14,9 +14,9 @@ api = tweepy.API(auth)
 #    print(tweet.text)
     
 for tweet in tweepy.Cursor(api.search,
-                           q="google",
-                           rpp=100,
+                           q="clouds taste like",
+                           rpp=10,
                            result_type="recent",
                            include_entities=True,
                            lang="en").items():
-    print tweet.text
+    print(tweet.text)
