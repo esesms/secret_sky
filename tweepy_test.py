@@ -12,11 +12,16 @@ api = tweepy.API(auth)
 #public_tweets = api.home_timeline()
 #for tweet in public_tweets:
 #    print(tweet.text)
-    
+
+#search term option
+#q="clouds AND \"taste like\"",
+
+#searches twitter for
 for tweet in tweepy.Cursor(api.search,
-                           q="clouds taste like",
-                           rpp=10,
-                           result_type="recent",
+                           q="\"clouds taste\"",
+                           count=100,
+                           result_type="mixed",
                            include_entities=True,
-                           lang="en").items():
+                           lang="en").items(100):
     print(tweet.text)
+    #print(tweet)
