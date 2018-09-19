@@ -8,6 +8,15 @@ api = tweepy.API(auth)
 #update status
 #api.update_status('Hello Python!')
 
-public_tweets = api.home_timeline()
-for tweet in public_tweets:
-    print(tweet.text)
+#output tweets in my home timeline
+#public_tweets = api.home_timeline()
+#for tweet in public_tweets:
+#    print(tweet.text)
+    
+for tweet in tweepy.Cursor(api.search,
+                           q="google",
+                           rpp=100,
+                           result_type="recent",
+                           include_entities=True,
+                           lang="en").items():
+    print tweet.text
