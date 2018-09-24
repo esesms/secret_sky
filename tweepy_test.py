@@ -18,7 +18,7 @@ api = tweepy.API(auth)
 
 #searches twitter for
 for tweet in tweepy.Cursor(api.search,
-                           q="\"clouds taste\"",
+                           q="clouds taste like",
                            count=100,
                            result_type="mixed",
                            include_entities=True,
